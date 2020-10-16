@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.startGame = new System.Windows.Forms.Button();
@@ -35,6 +36,7 @@
             this.exit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +70,7 @@
             // startGame
             // 
             this.startGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startGame.Location = new System.Drawing.Point(187, 128);
+            this.startGame.Location = new System.Drawing.Point(187, 118);
             this.startGame.Name = "startGame";
             this.startGame.Size = new System.Drawing.Size(120, 25);
             this.startGame.TabIndex = 1;
@@ -79,7 +81,7 @@
             // info
             // 
             this.info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.info.Location = new System.Drawing.Point(187, 261);
+            this.info.Location = new System.Drawing.Point(187, 285);
             this.info.Name = "info";
             this.info.Size = new System.Drawing.Size(120, 25);
             this.info.TabIndex = 3;
@@ -90,7 +92,7 @@
             // exit
             // 
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit.Location = new System.Drawing.Point(187, 357);
+            this.exit.Location = new System.Drawing.Point(187, 356);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(120, 25);
             this.exit.TabIndex = 4;
@@ -113,13 +115,24 @@
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(187, 214);
+            this.button1.Location = new System.Drawing.Point(187, 238);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 25);
             this.button1.TabIndex = 2;
             this.button1.Text = "Правила";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(187, 190);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 25);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Таблица рейтингов";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -128,21 +141,27 @@
             this.BackgroundImage = global::Строитель_и_Филосов.Properties.Resources.back0;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(500, 400);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.info);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.startGame);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Игра \"Строитель и Филосов\"";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form_MouseUp);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
+            this.Controls.SetChildIndex(this.pictureBox2, 0);
+            this.Controls.SetChildIndex(this.startGame, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
+            this.Controls.SetChildIndex(this.info, 0);
+            this.Controls.SetChildIndex(this.exit, 0);
+            this.Controls.SetChildIndex(this.button2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -159,6 +178,7 @@
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

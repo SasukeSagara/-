@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Строитель_и_Филосов
 {
-    public partial class Form1 : Form
+    public partial class Form1 : BaseForm
     {
-        Point movePoint = Point.Empty; //Инициализация объекта "точка"
 
         public Form1()
         {
@@ -66,29 +57,11 @@ namespace Строитель_и_Филосов
             Close();
         }
 
-        #region drag
-        private void Form_MouseDown(object sender, MouseEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            if (e.Button != MouseButtons.Left)//если нажата не ЛКМ - завершаем обработку события
-                return;
-            movePoint = new Point(e.X, e.Y);//Если ЛКМ - Ловим начальную позицию перемещения
+            Hide();//Скрываем основную форму
+            new Table().ShowDialog();
+            Show();//По завершении - показываем основную форму
         }
-
-        private void Form_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (movePoint == Point.Empty)//Если позиция начала перемещения не отловлена - завершаем обработку события
-                return;
-            Point location = new Point//Отслеживаем перемещение мыши с зажатой ЛКМ
-                (this.Left + e.X - movePoint.X, Top + e.Y - movePoint.Y);
-            Location = location;//Перетаскиваем форму вслед за курсором
-        }
-
-        private void Form_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button != MouseButtons.Left)//если отпустили не ЛКМ - завершаем обработку события
-                return;
-            movePoint = Point.Empty;//Сбрасываем значение
-        }
-        #endregion drag
     }
 }
